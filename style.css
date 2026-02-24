@@ -63,3 +63,31 @@ footer {
   margin-top: 3rem;
   font-size: 0.9rem;
 }
+
+.row {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    justify-content: center;
+    gap: 20px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: flex;
+    justify-content: center;
+}
+
+.info-btn {
+    border: none;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    background: lightgreen;
+    text-transform: uppercase;
+    margin: 5px;
+    color: white;
+}
