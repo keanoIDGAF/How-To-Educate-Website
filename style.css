@@ -1,12 +1,8 @@
-/* <!-- ...................................................... -->
-<!-- Name:                       How To & Educate Website   -->
-<!-- Why its made:               This website is made for a school project where we need to make a website that is based on the wireframes and mock-ups we made -->
-<!-- Why this file:              This file is made for how things on the screen is colored -->
-<!-- ...................................................... -->
-<!-- Changes      version   -->
-<!--                        -->
-<!--                        -->
-<!-- ...................................................... --> */
+/* ...................................................... 
+   Name:           How To & Educate Website
+   Why its made:   School project based on wireframes/mock-ups
+   Why this file:  Styling and colors
+   ...................................................... */
 
 * {
   margin: 0;
@@ -19,8 +15,11 @@ body {
   background: #f5f7fa;
   color: #333;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Header & Navigatie */
 header {
   background: orange;
   padding: 1rem;
@@ -42,52 +41,73 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Layout */
 .container {
   max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
+/* De Grid layout voor de kaarten */
+.row {
+  display: grid; /* Toegevoegd: grid werkt niet zonder display: grid */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Verbeterd voor responsiveness */
+  justify-content: center;
+  gap: 20px;
+}
+
+/* De Card (samengevoegd tot één sterke stijl) */
 .card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 100%; /* Veranderd van 300px naar 100% zodat het in de grid past */
+  max-width: 100%;
   margin-bottom: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 40px; 
+  line-height: 1.4;
+}
+
+/* De Knoppen */
+.btn {
+  background-color: #4ade41;
+  color: black;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #3bc933;
 }
 
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 20px;
   background: #e5e7eb;
   margin-top: 3rem;
   font-size: 0.9rem;
+  flex: 1;
 }
 
-.row {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    justify-content: center;
-    gap: 20px;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-.row::after {
-    content: "";
-    clear: both;
-    display: flex;
-    justify-content: center;
-}
-
-.info-btn {
-    border: none;
-    padding: 12px 28px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    background: lightgreen;
-    text-transform: uppercase;
-    margin: 5px;
-    color: white;
+main.container {
+  flex: 1;
 }
