@@ -12,7 +12,9 @@
 }
 
 body {
-  background: #f5f7fa;
+  background-image: url("images/background.png");
+  background-size: cover;
+  background-position: center;
   color: #333;
   line-height: 1.6;
   display: flex;
@@ -31,38 +33,70 @@ nav {
   justify-content: center;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
+.nav-button {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparant wit */
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: background 0.3s, transform 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
 
-nav a:hover {
-  text-decoration: underline;
-}
+  .nav-button:hover {
+    background-color: white;
+    color: #ffa500;
+    transform: translateY(-2px);
+  }
 
-/* Layout */
+  /* De vernieuwde cards */
+  .content-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    line-height: 1.6;
+  }
+
+  .info-card h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .info-card p {
+    color: #555;
+    font-size: 1.1rem;
+  }
+
 .container {
   max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* De Grid layout voor de kaarten */
 .row {
-  display: grid; /* Toegevoegd: grid werkt niet zonder display: grid */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Verbeterd voor responsiveness */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   justify-content: center;
   gap: 20px;
 }
 
-/* De Card (samengevoegd tot één sterke stijl) */
 .card {
   background-color: white;
   padding: 30px;
   border-radius: 15px; 
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 100%; /* Veranderd van 300px naar 100% zodat het in de grid past */
+  width: 100%;
   max-width: 100%;
   margin-bottom: 1.5rem;
 }
@@ -99,8 +133,7 @@ footer {
   padding: 20px;
   background: #e5e7eb;
   margin-top: 3rem;
-  font-size: 0.9rem;
-  flex: 1;
+  font-size: 1rem;
 }
 
 html, body {
@@ -110,4 +143,78 @@ html, body {
 
 main.container {
   flex: 1;
+}
+
+.info-grid-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .info-grid-card {
+    flex: 1;
+    min-width: 280px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    font-family: sans-serif;
+  }
+
+  .info-grid-card p {
+    margin-bottom: 15px;
+    color: #334155;
+    font-size: 1.1rem;
+  }
+
+  .info-grid-button {
+    background-color: #4ade80;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .info-grid-button:hover {
+    background-color: #22c55e;
+  }
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    box-sizing: border-box; 
+    border-color: orange;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: orange;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    background-color: #fff;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
 }
